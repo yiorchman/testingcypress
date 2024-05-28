@@ -1,7 +1,5 @@
 beforeEach(() => {
-
     cy.visit('https://magento.softwaretestingboard.com/')
-  
   })
   
 
@@ -26,18 +24,27 @@ describe('Menu options', () => {
     })
 
     it('Women', () => {
-        
+        cy.get('span').contains('Women').trigger('mouseover')
+        cy.get('span').contains('Jackets').click({ force : true})
+        cy.get('h1').contains('Jackets')
     })
     it('Men', () => {
-        
+        cy.get('span').contains('Men').trigger('mouseover')
+        cy.get('span').contains('Jackets').click({ force : true})
+        cy.get('h1').contains('Jackets')
     })
     it('Gear', () => {
-        
+        cy.get('span').contains('Gear').trigger('mouseover')
+        cy.get('span').contains('Bags').click({ force : true})
+        cy.get('h1').contains('Bags')
     })
     it('Training', () => {
-        
+        cy.get('span').contains('Training').trigger('mouseover')
+        cy.get('span').contains('Video Download').click({ force : true})
+        cy.get('h1').contains('Video Download')
     })
     it('Sale', () => {
-        
+        cy.get('span').contains('Sale').click()
+        cy.get('h1').contains('Sale')
     })
 })
